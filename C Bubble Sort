@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main() 
+{
+  int arr[5] = {42,18,29,3,1,};
+    
+  for (int i = 0; i < 5; i++)
+  {
+    printf(" %d",arr[i]);
+    printf("\n");
+  }
+  printf("\n ");
+  
+  printf("If second value is less than first value, swap the two \n\n");
+  
+  for (int i = 0; i < 5; i++)
+  {    
+    int a = 0;//place holder to hold swap value
+    printf("Outer Loop: %d: \n", i);
+    
+    for (int j = i+1; j < 5; j++)
+    {    
+      printf("\tinner loop: %d \n", j);
+      if(arr[j]<arr[i])
+      {
+        a = arr[i];
+        arr[i] = arr[j];
+        arr[j] = a;         
+      }
+      
+      printf("\tArray is now: ");
+        for (int k = 0; k<5; k++)
+        {
+          printf(" %d ", arr[k]);
+        }
+        printf("\n");      
+    }
+    printf("\n");  
+  }
+  
+  for (int i = 0; i < 5; i++)
+  {
+    printf(" %d ",arr[i]);
+    printf("\n");
+  } 
+}
+
+/*int sort(int arr1[], int len)
+{
+  int a = 0; //placeholder for value being swapped
+  
+  for (int i = 0; i < len; i++)
+  {
+    for (int j = 1; j < len; j++)
+    {
+      if(arr1[j] <)
+    }
+  }
+}*/
