@@ -1,0 +1,41 @@
+#include <stdbool.h>
+#include <stdio.h>
+#include <string.h>
+
+bool solution(const char *string, const char *ending)
+{
+    bool a = false; 
+    int lenFull = strlen(string) ; //determine length of strings
+    int lenEnd = strlen(ending) ;
+    int lenCount= lenFull-lenEnd; //get string starting array position    
+    
+    if(strlen(ending)== 0)//Edge case if string ending is empty
+    {
+      a = true;
+      return a;
+    }
+  
+    else if(lenEnd > lenFull)//Edge case if ending longer than string
+    {
+      a = false;
+      return a;
+    } 
+
+ 
+  //Evaluate string at position lenCount to ending
+    for (int i=0; i<=lenEnd-1; i++)
+    {
+      if (string[lenCount] == ending[i])
+      {
+        a = true;
+        lenCount++;
+      }
+            
+      else
+      {
+        a = false;
+        break;
+      }
+    }
+    return a;
+}
