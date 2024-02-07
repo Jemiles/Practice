@@ -2,50 +2,65 @@
 
 int main() 
 {
-  int arr[5] = {42,18,29,3,1,};
+  int arr[5] = {42,18,29,3,1,}; //Initialize array with a length of 5
     
-  for (int i = 0; i < 5; i++)
+  for (int i = 0; i < 5; i++) //This cycles through each element in the array and prints to the screen
   {
     printf(" %d",arr[i]);
     printf("\n");
   }
-  printf("\n ");
-  
+  printf("\n "); 
+
+/* This briefly sums up what the code is doing. Cycling through each element
+    in the array (same as above when printing to screen) and comparing values to determine 
+    if a value is lower or higher than its neighbor. In this case, we are going from lowest to
+    highest value. It uses two loops, an outer loop with a nested loop to cycle through values.
+    
+    This code prints the values at each stage of the loop to help visualize what is happening*/
+
   printf("If second value is less than first value, swap the two \n\n");
   
-  for (int i = 0; i < 5; i++)
+  for (int i = 0; i < 5; i++) // Outer loop
   {    
-    int a = 0;//place holder to hold swap value
-    printf("Outer Loop: %d: \n", i);
+    int a = 0; //place holder to hold swap value
+    printf("Outer Loop: %d: \n", i); 
     
-    for (int j = i+1; j < 5; j++)
+    for (int j = i+1; j < 5; j++) // inner loop
     {    
       printf("\tinner loop: %d \n", j);
-      if(arr[j]<arr[i])
+
+      /* Here we compare values in the array using the incrementing values i and j from the loops.
+          The logic is simple, starting with the value at postion 1 and 0. Asking if the 1 position is
+          less than the 0 position.*/
+      if(arr[j]<arr[i]) 
       {
+        /* If true, the 1 position needs to move to the 0 position. Since assigning the value at the one position
+            will overide the value at the 0 position, we must save the value at 0 to a and write it to the 1 position*/
         a = arr[i];
         arr[i] = arr[j];
         arr[j] = a;         
       }
       
-      printf("\tArray is now: ");
+      printf("\tArray is now: "); // display the current value after one run of inner loop
         for (int k = 0; k<5; k++)
         {
           printf(" %d ", arr[k]);
         }
         printf("\n");      
     }
-    printf("\n");  
-  }
+    printf("\n"); // end printing values to screen after one run 
+  } 
   
-  for (int i = 0; i < 5; i++)
+  for (int i = 0; i < 5; i++) // Print to screen the final sorted array
   {
     printf(" %d ",arr[i]);
     printf("\n");
   } 
 }
 
-/*int sort(int arr1[], int len)
+/*Here I was in the process of turning this into a function where values can simply be passed in
+
+  int sort(int arr1[], int len) 
 {
   int a = 0; //placeholder for value being swapped
   
